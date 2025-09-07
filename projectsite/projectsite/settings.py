@@ -28,10 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'hackerman0202.pythonanywhere.com',
-    'psusphere.pythonanywhere.com',
     '127.0.0.1',  # for local testing
     'localhost',
-    'hackerman0202.pythonanywhere.com' ]
+    'www.hackerman0202.pythonanywhere.com' ]
 
 
 # Application definition
