@@ -30,7 +30,8 @@ ALLOWED_HOSTS = [
     'hackerman0202.pythonanywhere.com',
     'psusphere.pythonanywhere.com',
     '127.0.0.1',  # for local testing
-    'localhost', ]
+    'localhost',
+    'hackerman0202.pythonanywhere.com' ]
 
 
 # Application definition
