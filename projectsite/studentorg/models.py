@@ -43,4 +43,4 @@ class OrgMember(BaseModel):
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
     date_joined = models.DateField()
     def __str__(self):
-    return f"{self.student} - {self.organization}"
+        return f"{self.student} - {self.organization}"
