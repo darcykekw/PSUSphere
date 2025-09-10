@@ -22,25 +22,65 @@
 				</button>
 				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
 			</div>
-			<nav class="navbar navbar-header navbar-expand-lg">
-				<div class="container-fluid">
-					
-					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
-						<div class="input-group">
-							<input type="text" placeholder="Search ..." class="form-control">
-							<div class="input-group-append">
-								<span class="input-group-text">
-									<i class="la la-search search-icon"></i>
-								</span>
-							</div>
-						</div>
-					</form>
-					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<!-- notifications and profile remain unchanged -->
-					</ul>
+			<nav class="navbar navbar-header navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{% url 'home' %}">PSUSphere</a>
+		<form class="navbar-left navbar-form nav-search mr-md-3" action="">
+			<div class="input-group">
+				<input type="text" placeholder="Search ..." class="form-control">
+				<div class="input-group-append">
+					<span class="input-group-text">
+						<i class="la la-search search-icon"></i>
+					</span>
 				</div>
-			</nav>
+			</div>
+		</form>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<i class="la la-envelope"></i>
+					</a>
+				</li>
+
+				<li class="nav-item dropdown hidden-caret">
+					<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="la la-bell"></i>
+						<span class="notification">3</span>
+					</a>
+					<div class="dropdown-menu" aria-labelledby="notifDropdown">
+						<a class="dropdown-item" href="#">Notification 1</a>
+						<a class="dropdown-item" href="#">Notification 2</a>
+						<a class="dropdown-item" href="#">Notification 3</a>
+					</div>
+				</li>
+
+				
+				<li class="nav-item dropdown">
+					<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+						<img src="{% static 'img/profile.jpg' %}" alt="user-img" width="36" class="img-circle">
+						<span> Hizrian</span>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li><a href="#">My Profile</a></li>
+						<li><a href="#">Settings</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Logout</a></li>
+					</ul>
+				</li>
+
+			</ul>
 		</div>
+	</div>
+</nav>
+	</div>
 		<div class="sidebar">
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
