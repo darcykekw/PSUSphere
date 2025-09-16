@@ -16,7 +16,7 @@
                         <div class="col-md-6">
                             <form class="navbar-left navbar-form nav-search mr-md-3" action="">
                                 <div class="input-group">
-                                    <input type="text" placeholder="Search ..." class="form-control" />
+                                    <input type="text" placeholder="Search ..." class="form-control" name="q" value="{{ request.GET.q }}"/>
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="la la-search search-icon"></i>
@@ -31,6 +31,27 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-12 mt-3">
+                        <form method="get" class="row g-2 align-items-center">
+                            <div class="col-auto">
+                                <label for="smallSelect" class="col-form-label">Sort by</label>
+                            </div>
+                            <div class="col-auto">
+                                <select class="form-control form-control-sm" id="smallSelect" name="sort_by">
+                                    <option value="student__lastname" {% if request.GET.sort_by == "student__lastname" %}selected{% endif %}>Student Name</option>
+                                    <option value="date_joined" {% if request.GET.sort_by == "date_joined" %}selected{% endif %}>Date Joined</option>
+                                </select>
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary btn-sm btn-rounded">Sort</button>
+                            </div>
+                            {% if request.GET.q %}
+                                <input type="hidden" name="q" value="{{ request.GET.q }}">
+                            {% endif %}
+                        </form>
+                    </div>
+                    
                     <div class="card-body">
                         <table class="table table-striped mt-3">
                             <thead>
@@ -52,12 +73,12 @@
                                             <a href="organizationMember_list/{{ object.id }}/delete" class="text-danger">Delete</a>
                                         </td>
                                     </tr>
-                                        {% empty %}
+                                {% empty %}
                                     <tr>
                                         <td colspan="4" style="text-align: center">
-                                        <p class="text-sm font-weight-bold mb-0">No Records Found</p>
+                                            <p class="text-sm font-weight-bold mb-0">No Records Found</p>
                                         </td>
-                                        </tr>
+                                    </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
